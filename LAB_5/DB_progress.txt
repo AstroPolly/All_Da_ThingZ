@@ -1,0 +1,56 @@
+CREATE TABLE groups (
+id INTEGER PRIMARY KEY,
+name VARCHAR(255) UNIQUE);
+
+CREATE TABLE student (
+id INTEGER PRIMARY KEY,
+name VARCHAR(255) UNIQUE,
+group_id INTEGER REFERENCES groups (id));
+
+CREATE TABLE student_marks (
+student_id INTEGER REFERENCES student (id),
+math_mark_average FLOAT,
+physics_mark_average FLOAT,
+python_mark_average FLOAT);
+
+INSERT INTO groups VALUES(1,'физики');
+
+INSERT INTO groups VALUES(2,'математики');
+
+INSERT INTO groups VALUES(3,'питонисты');
+
+INSERT INTO student VALUES(1,'Валерчик', 1);
+
+INSERT INTO student VALUES(2,'Козявкин', 1);
+
+INSERT INTO student VALUES(3,'Даниэль', 1);
+
+INSERT INTO student VALUES(4,'Лупа', 2);
+
+INSERT INTO student VALUES(5,'Пупа', 2);
+
+INSERT INTO student VALUES(6,'Джамшут', 2);
+
+INSERT INTO student VALUES(7,'Аяз', 3);
+
+INSERT INTO student VALUES(8,'Мухамиджон', 3);
+
+INSERT INTO student VALUES(9,'Мармеладка', 3);
+
+INSERT INTO student_marks VALUES(1, 14, 80, 25);
+
+INSERT INTO student_marks VALUES(2, 13, 90, 24);
+
+INSERT INTO student_marks VALUES(3, 12, 75, 23);
+
+INSERT INTO student_marks VALUES(4, 75, 8, 25);
+
+INSERT INTO student_marks VALUES(5, 89, 9, 24);
+
+INSERT INTO student_marks VALUES(6, 78, 7, 23);
+
+INSERT INTO student_marks VALUES(7, 4, 8, 250);
+
+INSERT INTO student_marks VALUES(8, 3, 9, 240);
+
+INSERT INTO student_marks VALUES(9, 2, 5, 230)
