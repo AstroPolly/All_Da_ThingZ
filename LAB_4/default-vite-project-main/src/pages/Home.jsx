@@ -1,13 +1,6 @@
 import React, { useState } from 'react'
 import {
-    chakra,
-    Button,
-    List,
-    ListItem,
-    Heading,
-    Flex,
-    Input,
-    Text,
+    chakra, Button, List, ListItem, Heading, Flex, Text,
 } from '@chakra-ui/react'
 
 export const Home = () => {
